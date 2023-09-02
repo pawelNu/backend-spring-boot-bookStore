@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("api/v1/books")
 public class BookController {
 
     @GetMapping("")
