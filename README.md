@@ -1,5 +1,4 @@
-# Book Store Application
-
+# Book Store Application - Spring Boot Backend
 
 ## Table of content
 
@@ -7,9 +6,9 @@
 
 ## Github Repositories
 
-[//]: # (Backend: TODO add link from github)
+Backend: https://github.com/pawelNu/backend-spring-boot-bookStore
 
-[//]: # (Frontend: TODO add link from github)
+Frontend: https://github.com/pawelNu/frontend-react-book-store
 
 ## Features
 
@@ -87,10 +86,8 @@ PDF version: [Enable-CircleCI-builds-for-Spring-Boot.pdf](assets/Enable-CircleCI
     EXPOSE 8080
     ```
 12. In Render -> Create a new Web Service
-
-    [//]: # (13. Configure GitHub account -> choose backend-spring-boot-bookStore repository)
-
-13. Public Git repository -> https://github.com/pawelNu/backend-spring-boot-bookStore -> button Continue
-14. Runtime: Docker
-15. Button Create Web Service
-16. 
+13. Configure GitHub account -> choose backend-spring-boot-bookStore repository
+14. Or add in: Public Git repository -> https://github.com/pawelNu/backend-spring-boot-bookStore -> button Continue
+15. Runtime: Docker
+16. Button Create Web Service
+17. After building -> https://bookstore-k5xx.onrender.com/api/v1/books
