@@ -2,6 +2,8 @@
 
 ## Table of content
 
+TODO create table of content
+
 [//]: # (TODO create table of content)
 
 ## Github Repositories
@@ -11,6 +13,8 @@ Backend: https://github.com/pawelNu/backend-spring-boot-bookStore
 Frontend: https://github.com/pawelNu/frontend-react-book-store
 
 ## Features
+
+TODO add discription of application features
 
 [//]: # (TODO add discription of application features)
 
@@ -38,11 +42,15 @@ PDF version: [Enable-CircleCI-builds-for-Spring-Boot.pdf](assets/Enable-CircleCI
 9. Paste to `config.yml` file configuration.
 10. Change openjdk to 17 in `cimg/openjdk:17.0.7`. More info: https://circleci.com/developer/images/image/cimg/openjdk
 
+TODO finish the deploy configuration
+
 [//]: # (11. TODO finish deployment configuration)
 
 ## Deploy to Vercel
 
 1. Go to https://vercel.com/
+
+TODO finish the deploy configuration
 
 [//]: # (TODO finish the deploy configuration)
 
@@ -50,44 +58,37 @@ PDF version: [Enable-CircleCI-builds-for-Spring-Boot.pdf](assets/Enable-CircleCI
 
 1. Go to https://humalect.com/
 
+TODO finish the deploy configuration
+
 [//]: # (TODO finish the deploy configuration)
 
 ## Deploy to Render
 
-1. Go to https://render.com/
-2. Login with GitHub account
-3. In `.gitignore` file comment
-    ```.gitignore
-    ### Comment this directories to deploy to Render ###
-    #target/
-    #!.mvn/wrapper/maven-wrapper.jar
-    #!**/src/main/**/target/
-    #!**/src/test/**/target/
-    ```
-4. Directories: `.mvn` and `target` must be added to git repository
-5. In Intellij -> View -> Tool Windows -> Maven
-6. Select bookStore -> Lifecycle -> clean -> package
-7. Test `.jar` file [bookStore-0.0.1-SNAPSHOT.jar](target/bookStore-0.0.1-SNAPSHOT.jar)
-8. In Intellij run in Terminal:
-    ```shell
-    java -jar target/bookStore-0.0.1-SNAPSHOT.jar
-    ```
-9. Or create `.bat` file in main directory [runApplication.bat](runApplication.bat) and run it
-    ```shell
-    start /B java -jar target/bookStore-0.0.1-SNAPSHOT.jar
-    ```
-10. In browser go to http://localhost:8080/api/v1/books, you should see JSON response.
-11. Create Dockerfile in main directory
-    ```dockerfile
-    FROM eclipse-temurin:17-jdk-alpine
-    VOLUME /tmp
-    COPY target/*.jar app.jar
-    ENTRYPOINT ["java", "-jar", "/app.jar"]
-    EXPOSE 8080
-    ```
-12. In Render -> Create a new Web Service
-13. Configure GitHub account -> choose backend-spring-boot-bookStore repository
-14. Or add in: Public Git repository -> https://github.com/pawelNu/backend-spring-boot-bookStore -> button Continue
-15. Runtime: Docker
-16. Button Create Web Service
-17. After building -> https://bookstore-k5xx.onrender.com/api/v1/books
+1. Create Dockerfile in main directory
+   ```dockerfile
+   #
+   # Build stage
+   #
+   FROM maven:3.8.3-openjdk-17 AS build
+   WORKDIR /app
+   COPY . /app/
+   RUN mvn clean package
+    
+   #
+   # Package stage
+   #
+   FROM openjdk:17-alpine
+   WORKDIR /app
+   COPY --from=build /app/target/*.jar /app/app.jar
+   EXPOSE 8080
+   ENTRYPOINT ["java", "-jar", "app.jar"]
+
+   ```
+2. Go to https://render.com/
+3. Login with GitHub account
+4. In Render -> Create a new Web Service
+5. Configure GitHub account -> choose backend-spring-boot-bookStore repository
+6. Or add in: Public Git repository -> https://github.com/pawelNu/backend-spring-boot-bookStore -> button Continue
+7. Runtime: Docker
+8. Button Create Web Service
+9. After building -> https://bookstore-k5xx.onrender.com/api/v1/books
