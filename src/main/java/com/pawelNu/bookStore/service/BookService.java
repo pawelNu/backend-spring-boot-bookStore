@@ -5,6 +5,7 @@ import com.pawelNu.bookStore.model.BookEntity;
 import com.pawelNu.bookStore.repository.BookRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

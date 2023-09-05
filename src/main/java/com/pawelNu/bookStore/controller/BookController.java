@@ -1,6 +1,9 @@
 package com.pawelNu.bookStore.controller;
 
 import com.pawelNu.bookStore.dto.BookDto;
+import com.pawelNu.bookStore.service.BookService;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,20 +14,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/books")
+@RequestMapping("/api/v1/books")
 public class BookController {
 
+    @Autowired
+    private BookService bookService;
+
+    // http://localhost:8080/api/v1/books
     @GetMapping("")
     public ResponseEntity<List<BookDto>> getBooks() {
-        BookDto book = BookDto.builder()
-                .title("My First book title")
-                .build();
-        BookDto book2 = BookDto.builder()
-                .title("My Second book title")
-                .build();
-        List<BookDto> books = new ArrayList<>();
-        books.add(book);
-        books.add(book2);
+        List<BookDto> books = bookService.getBooks();
         return ResponseEntity.ok(books);
     }
 }
