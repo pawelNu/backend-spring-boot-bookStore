@@ -2,11 +2,19 @@ package com.pawelNu.bookStore.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import org.springframework.web.bind.annotation.GetMapping;
+import lombok.*;
+import org.hibernate.proxy.HibernateProxy;
 
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity
+@Builder
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "book")
 public class BookEntity {
     @Id
@@ -24,4 +32,5 @@ public class BookEntity {
     @Column
     @NotNull
     private int releaseYear;
+
 }
