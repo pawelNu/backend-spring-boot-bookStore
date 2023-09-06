@@ -111,6 +111,24 @@ Example: https://www.baeldung.com/jacoco
    # removes com.pawelNu.bookStore.dto from report
    lombok.addLombokGeneratedAnnotation = true
    ```
-3. In Intellij -> Viev -> Tool Windows -> Maven (or choose Maven from right side bar)
+3. In Intellij -> View -> Tool Windows -> Maven (or choose Maven from right side bar)
 4. bookStore -> Plugins -> test
 5. It creates `target/jacoco.exec` and go to: `target/site/jacoco/index.html` and open it in browser
+
+## Add Swagger
+
+https://www.bezkoder.com/spring-boot-swagger-3/
+
+https://swagger.io/specification/
+
+1. Add dependency `springdoc-openapi-starter-webmvc-ui`
+2. In controller class and `@Tag` and to endpoint add `@Operation`, more info: https://www.bezkoder.com/spring-boot-swagger-3/
+3. Run Spring Boot project. Open browser with url: http://localhost:8080/swagger-ui/index.html
+4. Open http://localhost:8080/v3/api-docs, to see document in Json format
+
+https://www.bezkoder.com/swagger-3-annotations/#Swagger_3_Parameter_annotation
+
+Documentation: https://docs.swagger.io/swagger-core/v2.2.9/apidocs/io/swagger/v3/oas/annotations/media/Schema.html
+
+[//]: # (TODO)
+[//]: # (https://comarchsa.udemy.com/course/full-stack-project-using-spring-boot-and-react-with-tdd/learn/lecture/26542730#overview)
