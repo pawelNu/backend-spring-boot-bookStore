@@ -18,14 +18,6 @@ TODO add discription of application features
 
 [//]: # (TODO add discription of application features)
 
-## Deploy to Vercel
-
-1. Go to https://vercel.com/
-
-TODO finish the deploy configuration
-
-[//]: # (TODO finish the deploy configuration)
-
 ## Deploy to Render
 
 1. Create Dockerfile in main directory
@@ -117,8 +109,7 @@ Example: https://www.baeldung.com/jacoco
 
 ## Add Swagger
 
-https://www.bezkoder.com/spring-boot-swagger-3/
-
+https://www.bezkoder.com/spring-boot-swagger-3/  
 https://swagger.io/specification/
 
 1. Add dependency `springdoc-openapi-starter-webmvc-ui`
@@ -130,5 +121,37 @@ https://www.bezkoder.com/swagger-3-annotations/#Swagger_3_Parameter_annotation
 
 Documentation: https://docs.swagger.io/swagger-core/v2.2.9/apidocs/io/swagger/v3/oas/annotations/media/Schema.html
 
+## Create PostgreSQL on Render
+
+1. Go to https://render.com/
+2. Go to Dashboard -> button New + -> PostgreSQL
+3. New PostgreSQL-> fill: Name, Database, User, Region
+4. Instance Type: Free
+5. button Create Database -> lasted about 30 min
+
+## Create Environment Variable on Render
+
+1. Dashboard -> choose service -> Environment -> Environment Variables -> Add Environment Variable
+2. Key: `SPRING.PROFILES.ACTIVE`, value: `prod`
+3. Add the same way the rest variables from `application-prod.yaml`: databaseUrl, usernameDB, passwordDB
+4. Save Changes
+
+## Create .env file
+
+1. Add dependency https://mvnrepository.com/artifact/me.paulschwarz/spring-dotenv
+2. Create `.env` file and add values to keys
+    ```
+    databaseUrl=jdbc:postgresql://host-name:port/database-name
+    usernameDB=user
+    passwordDB=password
+    ```
+3. In Intellij, in Run/Debug Configuration -> choose profile to edit
+4. In Environment Variables add: `SPRING.PROFILES.ACTIVE=prod`
+5. This will cause to run `application-prod.yaml` file
+
+## Running in prod with Postgres Database
+
+1. Use DBeaver or http://localhost:8080/h2-console to connect to database
+
 [//]: # (TODO)
-[//]: # (https://comarchsa.udemy.com/course/full-stack-project-using-spring-boot-and-react-with-tdd/learn/lecture/26542730#overview)
+
