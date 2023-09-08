@@ -1,7 +1,6 @@
 package com.pawelNu.bookStore.controller;
 
 import com.pawelNu.bookStore.dto.BookDto;
-import com.pawelNu.bookStore.model.BookEntity;
 import com.pawelNu.bookStore.service.BookService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
