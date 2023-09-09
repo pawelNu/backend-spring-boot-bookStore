@@ -3,7 +3,7 @@
 I CANNOT FINISH THE PROJECT  
 COURSE HAS NOT SOURCE CODE
 
-## Table of content
+* [Book Store Application - Spring Boot Backend](#book-store-application---spring-boot-backend)
   * [Github Repositories](#github-repositories)
   * [Features](#features)
   * [Deploy to Render](#deploy-to-render)
@@ -12,6 +12,7 @@ COURSE HAS NOT SOURCE CODE
   * [Create PostgreSQL on Render](#create-postgresql-on-render)
   * [Create Environment Variable on Render](#create-environment-variable-on-render)
   * [Create .env file](#create-env-file)
+  * [Run files](#run-files)
   * [Running in prod with Postgres Database](#running-in-prod-with-postgres-database)
 
 ## Github Repositories
@@ -154,6 +155,12 @@ Documentation: https://docs.swagger.io/swagger-core/v2.2.9/apidocs/io/swagger/v3
 3. In Intellij, in Run/Debug Configuration -> choose profile to edit
 4. In Environment Variables add: `SPRING.PROFILES.ACTIVE=prod`
 5. This will cause to run `application-prod.yaml` file
+
+## Configuration run files
+
+DEV file: [BookStoreApplication.run.xml](BookStoreApplication.run.xml)
+
+PROD file: [(PROD) BookStoreApplication.run.xml](%28PROD%29%20BookStoreApplication.run.xml)
 
 ## Running in prod with Postgres Database
 
