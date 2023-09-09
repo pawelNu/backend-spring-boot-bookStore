@@ -1,10 +1,18 @@
 # Book Store Application - Spring Boot Backend
 
+I CANNOT FINISH THE PROJECT  
+COURSE HAS NOT SOURCE CODE
+
 ## Table of content
-
-TODO create table of content
-
-[//]: # (TODO create table of content)
+  * [Github Repositories](#github-repositories)
+  * [Features](#features)
+  * [Deploy to Render](#deploy-to-render)
+  * [Add JaCoCo](#add-jacoco)
+  * [Add Swagger](#add-swagger)
+  * [Create PostgreSQL on Render](#create-postgresql-on-render)
+  * [Create Environment Variable on Render](#create-environment-variable-on-render)
+  * [Create .env file](#create-env-file)
+  * [Running in prod with Postgres Database](#running-in-prod-with-postgres-database)
 
 ## Github Repositories
 
@@ -14,9 +22,7 @@ Frontend: https://github.com/pawelNu/frontend-react-book-store
 
 ## Features
 
-TODO add discription of application features
-
-[//]: # (TODO add discription of application features)
+Project abandoned
 
 ## Deploy to Render
 
@@ -152,6 +158,3 @@ Documentation: https://docs.swagger.io/swagger-core/v2.2.9/apidocs/io/swagger/v3
 ## Running in prod with Postgres Database
 
 1. Use DBeaver or http://localhost:8080/h2-console to connect to database
-
-[//]: # (TODO)
-
